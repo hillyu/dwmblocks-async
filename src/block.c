@@ -2,6 +2,7 @@
 
 #include <bits/stdint-uintn.h>
 #include <bits/types/FILE.h>
+#include <signal.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdio.h>
@@ -54,7 +55,8 @@ int block_deinit(block *const block) {
 int block_execute(block *const block, const uint8_t button) {
     // Ensure only one child process exists per block at an instance.
     if (block->fork_pid != -1) {
-        return 0;
+    /*     return 0; */
+        kill(block->fork_pid, 9);
     }
 
     block->fork_pid = fork();
