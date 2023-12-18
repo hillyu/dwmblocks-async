@@ -1,10 +1,8 @@
 #include "block.h"
 
-#include <bits/stdint-uintn.h>
-#include <bits/types/FILE.h>
-#include <signal.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -143,7 +141,7 @@ int block_update(block *const block) {
         return 1;
     }
 
-    (void)strcpy(block->output, buffer);
+    (void)strncpy(block->output, buffer, LEN(buffer));
 
     return 0;
 }

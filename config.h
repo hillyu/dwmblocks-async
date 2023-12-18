@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CONFIG_H
+#define CONFIG_H
 
 // String used to delimit block outputs in the status.
 #define DELIMITER "︱"
@@ -28,4 +29,6 @@
     X("~/.config/scripts/volume-pulseaudio 2>/dev/null|head -n1 ", 0,12)\
     X("~/.config/scripts/i3weather 2>/dev/null|head -n1",100,22)    \
     X("~/.config/scripts/clock 2>/dev/null|head -n1",10, 23)            \
-    X("~/.config/scripts/bluetooth.i3 2>/dev/null|head -n1 ",0, 5)
+    X("~/.config/scripts/bluetooth.i3 2>/dev/null|head -n1 ",0, 9)
+
+#endif  // CONFIG_H

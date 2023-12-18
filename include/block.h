@@ -1,7 +1,8 @@
-#pragma once
+#ifndef BLOCK_H
+#define BLOCK_H
 
-#include <bits/stdint-uintn.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include <sys/types.h>
 
 #include "config.h"
@@ -24,3 +25,5 @@ int block_deinit(block *const block);
 int block_execute(block *const block, const uint8_t button);
 int block_update(block *const block);
 bool block_must_run(const block *const block, const unsigned int time);
+
+#endif  // BLOCK_H
